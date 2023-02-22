@@ -1,0 +1,30 @@
+from rest_framework import serializers
+from dvizhenie.core.loading import get_model
+
+__all__ = [
+    'ContactsSerializer',
+    'FileSerializer',
+    'GallerySerializer',
+]
+
+Contacts = get_model('root', 'Contacts')
+File = get_model('root', 'File')
+Gallery = get_model('root', 'Gallery')
+
+
+class GallerySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Gallery
+        fields = "__all__"
+
+
+class ContactsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Contacts
+        fields = "__all__"
+
+
+class FileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = File
+        fields = "__all__"

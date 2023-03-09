@@ -9,6 +9,7 @@ class News(models.Model):
     """
     title = models.CharField(_("title"), max_length=128, db_index=True)
     description = models.TextField(_("description"), blank=True)
+    short_description = models.TextField(_("short description"), blank=True)
     created_at = models.DateTimeField(_("Date and time of public news."), auto_now_add=True)
     updated_at = models.DateTimeField(_("Last update"), auto_now=True)
     picture = models.ImageField("фото")

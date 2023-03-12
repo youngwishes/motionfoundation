@@ -9,6 +9,7 @@ class Partner(models.Model):
     """
     name = models.CharField(_("name"), max_length=128, blank=True)
     logo = models.ImageField(verbose_name=_("logo"), upload_to='partners')
+    partner_url = models.URLField("Ссылка на партнера")
 
     class Meta:
         verbose_name = _("partner")

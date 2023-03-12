@@ -42,6 +42,7 @@ class Contacts(models.Model):
         'events.Address', verbose_name=_("address"), on_delete=models.CASCADE, blank=True
     )
     telegram = models.URLField(_("telegram"), max_length=200, blank=True)
+    mail = models.EmailField(blank=True)
 
     class Meta:
         verbose_name = _("contact")

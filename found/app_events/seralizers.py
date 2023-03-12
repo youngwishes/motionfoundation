@@ -7,6 +7,9 @@ Address = get_model('events', 'Address')
 
 
 class EventSerializer(serializers.ModelSerializer):
+    start_timestamp = serializers.DateTimeField(format='%d.%m.%Y %H:%M:%S')
+    end_timestamp = serializers.DateTimeField(format='%d.%m.%Y %H:%M:%S')
+
     class Meta:
         model = FundEvent
         fields = "__all__"

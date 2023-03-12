@@ -26,7 +26,7 @@ class FundEvent(models.Model):
     description = models.TextField(_("description"), max_length=2048, blank=True)
     start_timestamp = models.DateTimeField(_("start timestamp"))
     end_timestamp = models.DateTimeField(_("end timestamp"))
-
+    short_description = models.TextField("короткое описание", blank=True)
     addresses = models.ManyToManyField(Address, verbose_name=_("addresses"), related_name="events", blank=True)
 
     is_online = models.BooleanField(

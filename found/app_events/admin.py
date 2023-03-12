@@ -14,7 +14,7 @@ class FundEventAdmin(admin.ModelAdmin):
     filter_horizontal = ('addresses',)
     fieldsets = (
         ('Название мероприятия', {
-            'fields': ('name', 'description')
+            'fields': ('name', 'short_description', 'description')
         }),
         ('Дата и время', {
             'classes': ('collapse',),

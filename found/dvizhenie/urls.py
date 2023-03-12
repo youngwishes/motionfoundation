@@ -55,6 +55,8 @@ router.register(r'news', NewsViewSet)
 
 router.register(r'projects', ProjectViewSet)
 router.register(r'partners', PartnerViewSet)
+router.register(r'project-types', ProjectTypeViewSet)
+
 
 router.register(r'files', FileViewSet)
 router.register(r'contacts', ContactsViewSet)

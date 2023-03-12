@@ -43,6 +43,3 @@ class FundEvent(models.Model):
         verbose_name_plural = _("events")
         ordering = ("start_timestamp",)
 
-    def clean(self):
-        if self.start_timestamp >= self.end_timestamp:
-            raise ValidationError(_("Start of the project cannot be later than its end."))

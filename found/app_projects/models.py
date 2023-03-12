@@ -60,6 +60,3 @@ class Project(models.Model):
     def __str__(self):
         return self.name
 
-    def clean(self):
-        if self.start_timestamp >= self.end_timestamp:
-            raise ValidationError(_("Start of the project cannot be later than its end"))

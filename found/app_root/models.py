@@ -44,9 +44,12 @@ class Contacts(models.Model):
     telegram = models.URLField(_("telegram"), max_length=200, blank=True)
     mail = models.EmailField(blank=True)
 
+    fund_info = models.TextField()
+
     class Meta:
         verbose_name = _("contact")
         verbose_name_plural = _("contacts")
 
     def __str__(self):
         return self.owner
+

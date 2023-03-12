@@ -7,6 +7,10 @@ Partner = get_model('projects', 'Partner')
 
 
 class ProjectSerializer(serializers.ModelSerializer):
+
+    start_timestamp = serializers.DateTimeField(format='%d.%m.%Y %H:%M:%S')
+    end_timestamp = serializers.DateTimeField(format='%d.%m.%Y %H:%M:%S')
+
     class Meta:
         model = Project
         fields = "__all__"

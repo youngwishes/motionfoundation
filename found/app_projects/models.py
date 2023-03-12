@@ -9,7 +9,7 @@ class Partner(models.Model):
     """
     name = models.CharField(_("name"), max_length=128, blank=True)
     logo = models.ImageField(verbose_name=_("logo"), upload_to='partners')
-    partner_url = models.URLField("Ссылка на партнера")
+    partner_url = models.URLField("Ссылка на партнера:")
 
     class Meta:
         verbose_name = _("partner")
@@ -39,11 +39,6 @@ class ProjectType(models.Model):
         return self.name
 
 
-class ProjectPhoto(models.Model):
-    project = models.ForeignKey('Project', on_delete=models.CASCADE, related_name="photos")
-    photo = models.ImageField("Фото проекта")
-
-
 class Project(models.Model):
     """
     Проекты. Обязательное поле - название. Остальные - опционально.
@@ -55,6 +50,7 @@ class Project(models.Model):
     start_timestamp = models.DateTimeField(_("start timestamp"))
     end_timestamp = models.DateTimeField(_("end timestamp"))
     project_type = models.ForeignKey('ProjectType', on_delete=models.CASCADE, verbose_name="тип проекта")
+    photo = models.ImageField("фото проекта")
 
     class Meta:
         verbose_name = _("project")
